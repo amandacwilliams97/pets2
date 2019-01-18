@@ -1,0 +1,12 @@
+{
+  "name":"awilliams/328/pets2/composer.json",
+  "authors": [
+    {
+      "name": "Amanda Williams",
+      "email": "awilliams100@mail.greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}
