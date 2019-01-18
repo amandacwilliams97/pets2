@@ -42,8 +42,13 @@ $f3->route('GET /@animal', function($f3, $params) {
         default:
             $f3->error(404);
     }
+});
 
-
+#---------------------------------------------------------------
+#define a route /order that renders form1.html
+$f3->route('GET /order', function() {
+    $view = new View();
+    echo $view->render('views/form1.html');
 });
 
 #run fat free
