@@ -51,5 +51,15 @@ $f3->route('GET /order', function() {
     echo $view->render('views/form1.html');
 });
 
+#define a route /order2 that uses POST
+$f3->route('POST /order2', function() {
+    $_SESSION['animal'] = $_POST['animal'];
+
+    print_r($_SESSION);
+
+    $view = new View();
+    echo $view->render('views/form2.html');
+});
+
 #run fat free
 $f3->run();
