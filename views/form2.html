@@ -6,13 +6,17 @@
 </head>
 <body>
     <form method="POST" action="results">
-        <legend>Color</legend>
-        <select>
-            <option value="red">Red</option>
-            <option value="orange">Orange</option>
-            <option value="yellow">Yellow</option>
-            <option value="green">Green</option>
-        </select>
+        <fieldset>
+            <legend>Color</legend>
+            <label>
+                <select name="color">
+                    <option name="color" value="red">Red</option>
+                    <option name="color" value="orange">Orange</option>
+                    <option name="color" value="yellow">Yellow</option>
+                    <option name="color" value="green">Green</option>
+                </select>
+            </label>
+        </fieldset>
 
         <input type="submit" value="Submit">
     </form>
