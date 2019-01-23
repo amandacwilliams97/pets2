@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 #Error Reporting
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
@@ -56,9 +58,6 @@ $f3->route('GET /order', function() {
 #define a route /order2 that uses POST
 $f3->route('POST /order2', function() {
     $_SESSION['animal'] = $_POST['animal'];
-
-    print_r($_SESSION);
-
     $view = new View();
     echo $view->render('views/form2.html');
 });#from form1 to form2
@@ -66,8 +65,6 @@ $f3->route('POST /order2', function() {
 #define route for results
 $f3->route('POST /results', function() {
     $_SESSION['color'] = $_POST['color'];
-
-    print_r($_SESSION);//why did animal disappear?
     $template=new Template();
     echo $template->render('views/results.html');
 });#from form 2 to results
