@@ -5,20 +5,12 @@
     <title>Choose Color</title>
 </head>
 <body>
-    <form method="POST" action="results">
-        <fieldset>
-            <legend>Color</legend>
-            <label>
-                <select name="color">
-                    <option name="color" value="red">Red</option>
-                    <option name="color" value="orange">Orange</option>
-                    <option name="color" value="yellow">Yellow</option>
-                    <option name="color" value="green">Green</option>
-                </select>
-            </label>
-        </fieldset>
+<select name="color" id="color" class="form-control">
+    <option>--Select a color--</option>
+    <repeat group="{{ @colors }}" value="{{ @colorOption }}">
+        <option>{{ @colorOption }}</option>
+    </repeat>
+</select>
 
-        <input type="submit" value="Submit">
-    </form>
 </body>
 </html>

@@ -14,6 +14,7 @@ $f3 = Base::instance();
 #Turn on Fat-Free error reporting
 $f3->set('DEBUG', 3);
 
+
 #----------------------------------------------------------------
 #define a default route
 $f3->route('GET /', function() {
@@ -50,9 +51,13 @@ $f3->route('GET /@animal', function($f3, $params) {
 
 #----------------------------------------------------------------
 #define a route /order that renders form1.html
-$f3->route('GET /order', function() {
+$f3->route('GET /order', function($f3) {
+
     $view = new View();
     echo $view->render('views/form1.html');
+
+    $f3->set('colors', array('pink', 'green', 'blue'));
+
 });#to form1
 
 #define a route /order2 that uses POST
