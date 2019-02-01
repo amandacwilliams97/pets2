@@ -51,20 +51,20 @@ $f3->route('GET /@animal', function($f3, $params) {
 
 #----------------------------------------------------------------
 #define a route /order that renders form1.html
-$f3->route('GET /order', function($f3) {
+$f3->route('GET|POST /order', function($f3) {
 
-    $view = new View();
-    echo $view->render('views/form1.html');
+    $template = new Template();
+    echo $template->render('views/form1.html');
 
 });#to form1
 
 #define a route /order2 that uses POST
-$f3->route('POST /order2', function($f3) {
+$f3->route('GET|POST /order2', function($f3) {
     $_SESSION['animal'] = $_POST['animal'];
 
     $f3->set('colors', array('pink', 'green', 'blue'));
-    $view = new Template();
-    echo $view->render('views/form2.html');
+    $template = new Template();
+    echo $template->render('views/form2.html');
 });#from form1 to form2
 
 #define route for results
